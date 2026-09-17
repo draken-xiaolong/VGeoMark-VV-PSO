@@ -1,0 +1,51 @@
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Audited cosine NC, mean $\pm$ sample standard deviation over ten attack seeds per dataset. Embedding is fixed. Noise is in meters; the compound protocol is defined in the text.}
+\label{tab:revised_attacks}
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & Vertex deletion 50\% & Object removal 90\% & Noise 50\%, $1.4\tau$ & Compound \\
+\midrule
+Railways & $0.9884\pm0.0041$ & $0.9412\pm0.0126$ & $0.8905\pm0.0094$ & $0.9282\pm0.0041$ \\
+Building & $0.9231\pm0.0047$ & $0.9106\pm0.0095$ & $0.8656\pm0.0103$ & $0.8627\pm0.0106$ \\
+Landuse & $0.9425\pm0.0057$ & $0.9128\pm0.0098$ & $0.8682\pm0.0090$ & $0.8804\pm0.0052$ \\
+Boundary & $0.8855\pm0.0071$ & $0.8616\pm0.0192$ & $0.8076\pm0.0071$ & $0.8234\pm0.0097$ \\
+Road & $0.8934\pm0.0078$ & $0.8664\pm0.0206$ & $0.8196\pm0.0129$ & $0.8254\pm0.0083$ \\
+Lake & $0.9163\pm0.0061$ & $0.9000\pm0.0121$ & $0.8441\pm0.0152$ & $0.8536\pm0.0084$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Carrier redundancy and geodesic fidelity after a shapefile write/read round trip. Votes are distributed over 1024 positions. Displacements are in meters; all revised polygon rings remain exactly closed.}
+\label{tab:revised_fidelity}
+\begin{tabular}{lrrrrrr}
+\toprule
+Dataset & Votes & Mean/bit & Median/bit & Mean (m) & Max (m) & Unclosed rings \\
+\midrule
+Railways & 52474 & 51.2 & 51 & 3.26e-07 & 1.92e-04 & 0 \\
+Building & 37076 & 36.2 & 34 & 2.64e-08 & 6.91e-06 & 0 \\
+Landuse & 40431 & 39.5 & 39 & 1.41e-07 & 1.57e-05 & 0 \\
+Boundary & 123780 & 120.9 & 121 & 4.70e-07 & 1.70e-03 & 0 \\
+Road & 69322 & 67.7 & 68 & 3.81e-07 & 5.34e-04 & 0 \\
+Lake & 64414 & 62.9 & 63 & 1.65e-07 & 4.05e-05 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Observed CPU runtime and severe-removal coverage. Extraction includes all PCA candidates. Erasures are empty watermark positions under 90\% object removal.}
+\label{tab:revised_runtime}
+\begin{tabular}{lrrrrrr}
+\toprule
+Dataset & Embed (s) & PSO iter. & Extract (s) & Votes/bit & Mean erasures & Max erasures \\
+\midrule
+Railways & 4.23 & 5.70 & 0.136 & 5.1 & 8.6 & 14 \\
+Building & 3.56 & 4.40 & 0.174 & 3.6 & 47.9 & 67 \\
+Landuse & 3.79 & 8.35 & 0.136 & 3.8 & 27.9 & 58 \\
+Boundary & 8.36 & 16.83 & 0.215 & 10.9 & 0.0 & 0 \\
+Road & 3.71 & 13.84 & 0.122 & 6.6 & 3.6 & 15 \\
+Lake & 4.13 & 14.64 & 0.132 & 6.5 & 3.4 & 17 \\
+\bottomrule
+\end{tabular}
+\end{table*}

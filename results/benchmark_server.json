@@ -1,0 +1,23 @@
+{
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "python": "3.12.3",
+  "numpy": "2.4.6",
+  "cpu_count": 128,
+  "runs": [
+    {
+      "embed_seconds": 7.174557615071535,
+      "extract_seconds": 0.16676998138427734,
+      "nc": 1.0
+    },
+    {
+      "embed_seconds": 7.037688512355089,
+      "extract_seconds": 0.17868142575025558,
+      "nc": 1.0
+    },
+    {
+      "embed_seconds": 6.942120052874088,
+      "extract_seconds": 0.17118903622031212,
+      "nc": 1.0
+    }
+  ]
+}

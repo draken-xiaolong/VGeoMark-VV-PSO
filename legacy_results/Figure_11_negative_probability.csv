@@ -1,0 +1,8 @@
+figure,dataset,without_pso_np,pso_iter_1_np,pso_iter_20_np,pso_iter_40_np
+Figure_11,Railways,0.3744,0.5601,0.7123,0.7225
+Figure_11,Building,0.4128,0.6217,0.7712,0.8121
+Figure_11,Landuse,0.4409,0.6489,0.7911,0.8413
+Figure_11,Boundary,0.4943,0.5877,0.6507,0.6789
+Figure_11,Road,0.4589,0.6031,0.7173,0.7539
+Figure_11,Lake,0.4735,0.6341,0.7573,0.7542
+Figure_11,Average,0.4430,0.6090,0.7320,0.7610

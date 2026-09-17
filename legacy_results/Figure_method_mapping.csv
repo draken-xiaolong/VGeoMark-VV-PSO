@@ -1,0 +1,7 @@
+source_column,semantic_column,method_label,legend_order,notes
+E4,yan_2017,Yan et al. (2017),1,Matched to the purple inverted-triangle curve in the existing Figure_13-15 legends.
+E2_30,li_2021,Li et al. (2021),2,Matched to the light-blue square curve in the existing Figure_13-15 legends.
+E5_35,zhang_2025,Zhang et al. (2025),3,Matched to the green diamond curve in the existing Figure_13-15 legends.
+E3_36,lin_2018,Lin et al. (2018),4,Matched to the black triangle curve in the existing Figure_13-15 legends.
+E1_37,xi_2022,Xi et al. (2022),5,Matched to the orange circle curve in the existing Figure_13-15 legends.
+Proposed,proposed,Proposed,6,Proposed method.

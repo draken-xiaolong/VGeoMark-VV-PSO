@@ -1,0 +1,7 @@
+numpy==2.4.6
+pandas
+Pillow
+pyshp
+joblib
+pyproj
+matplotlib

@@ -1,0 +1,53 @@
+{
+  "config": {
+    "q": 0.03,
+    "mcof": 1000000.0,
+    "num_particles": 10,
+    "max_iter": 40,
+    "inertia": 0.6,
+    "inertia_min": 0.0,
+    "c1_initial": 1.8,
+    "c1_min": 1.6,
+    "c2_initial": 1.8,
+    "c2_max": 2.2,
+    "early_stop_rounds": 8,
+    "early_stop_tol": 1e-12,
+    "target_fitness": 0.995,
+    "pca_normalize": true,
+    "n_jobs": 1,
+    "random_seed": 20260615,
+    "verbose": false,
+    "preserve_parts": false
+  },
+  "platform": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.11.5",
+  "numpy": "2.4.6",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "processor": "Apple M1 Pro",
+  "cpu_count": "8",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.2",
+    "Pillow": "12.3.0",
+    "pyshp": "2.3.1",
+    "pyproj": "3.7.2",
+    "joblib": "1.5.1",
+    "matplotlib": "3.10.5"
+  }
+}

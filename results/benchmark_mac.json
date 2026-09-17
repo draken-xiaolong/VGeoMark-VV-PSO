@@ -1,0 +1,23 @@
+{
+  "platform": "macOS-14.6.1-arm64-arm-64bit",
+  "python": "3.11.5",
+  "numpy": "2.4.6",
+  "cpu_count": 8,
+  "runs": [
+    {
+      "embed_seconds": 4.562924916972406,
+      "extract_seconds": 0.13475554197793826,
+      "nc": 1.0
+    },
+    {
+      "embed_seconds": 4.739280999987386,
+      "extract_seconds": 0.14313550002407283,
+      "nc": 1.0
+    },
+    {
+      "embed_seconds": 4.7897349579725415,
+      "extract_seconds": 0.138972916000057,
+      "nc": 1.0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+figure,attack_index,attack_type,without_pso_nc,pso_iter_1_nc,pso_iter_20_nc,pso_iter_40_nc
+Figure_12,0,no_attack,0.879,0.979,0.999,1.000
+Figure_12,1,vertex_deletion_30pct,0.785,0.907,0.981,0.992
+Figure_12,2,vertex_deletion_50pct,0.716,0.819,0.924,0.947
+Figure_12,3,object_deletion_30pct,0.845,0.963,0.997,1.000
+Figure_12,4,vertex_addition_10pct,0.848,0.964,0.996,0.999
+Figure_12,5,vertex_addition_30pct,0.801,0.923,0.984,0.991
+Figure_12,6,noise_0.6tau,0.842,0.954,0.996,0.999
+Figure_12,7,noise_1.4tau,0.693,0.787,0.888,0.909
+Figure_12,8,cropping_half_data,0.819,0.933,0.991,0.996
+Figure_12,9,translation_10_units,0.870,0.972,0.999,1.000
+Figure_12,10,scaling_factor_0.5,0.879,0.978,0.999,1.000
+Figure_12,11,reverse_vertices_within_each_object,0.870,0.969,0.998,1.000
+Figure_12,12,reverse_object_order,0.870,0.969,0.998,1.000
+Figure_12,13,compound_attack_1_3_4_6_9_10_11_12,0.710,0.796,0.917,0.927
