@@ -1,7 +1,9 @@
 # VGeoMark: virtual-vertex PSO-QIM revision artifact
 
 Python-only reproduction and audit for the IEEE IoT Journal major revision.
-See [PROTOCOL.md](PROTOCOL.md) before interpreting the numerical results.
+The current manuscript preserves the original figure layout. Start with
+[MINIMAL_REVISION.md](MINIMAL_REVISION.md) for its Figure 10 and repeated trials;
+[PROTOCOL.md](PROTOCOL.md) describes the separate diagnostic protocol.
 
 ```bash
 python3 -m venv .venv
@@ -18,12 +20,13 @@ python validate_results.py
 
 * `data/`: six original shapefile datasets, CRS/attribute sidecars and watermark.
 * `psoqim/`: NumPy Haar, QIM, PSO, synchronization, votes, and shapefile I/O.
+* `results/minimal_revision/`: full original-style Fig. 10 grid and ten-seed supplementary results.
 * `results/legacy/`: original-protocol rerun (not MATLAB bitwise equivalence).
 * `results/audited/`: raw multi-seed observations, summaries, per-bit vote arrays,
   metric fidelity and negative controls.
 * `results/diagnostics/`: paired internal ablation, redundancy, PCA conditioning,
   and compound-geometry/coordinate-rounding failure modes.
-* `figures/`: genuine vector PDF/SVG diagrams generated from source.
+* `figures/`: numerical plots and archived optional diagrams; main manuscript diagrams retain their original artwork.
 * `legacy_results/`: historical screenshot-derived tables with provenance caveats.
 
 `run_experiments.py` and `run_single.py` remain compatibility entry points; use
