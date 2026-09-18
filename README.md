@@ -2,7 +2,9 @@
 
 Python-only reproduction and audit for the IEEE IoT Journal major revision.
 The current manuscript preserves the original figure layout. Start with
-[MINIMAL_REVISION.md](MINIMAL_REVISION.md) for its Figure 10 and repeated trials;
+[ROBUSTNESS_REVISION.md](ROBUSTNESS_REVISION.md) for the selected stopping rule,
+current Figure 10 results, and independent validation.
+[MINIMAL_REVISION.md](MINIMAL_REVISION.md) records the preceding grid;
 [PROTOCOL.md](PROTOCOL.md) describes the separate diagnostic protocol.
 
 ```bash
@@ -20,7 +22,9 @@ python validate_results.py
 
 * `data/`: six original shapefile datasets, CRS/attribute sidecars and watermark.
 * `psoqim/`: NumPy Haar, QIM, PSO, synchronization, votes, and shapefile I/O.
-* `results/minimal_revision/`: full original-style Fig. 10 grid and ten-seed supplementary results.
+* `results/optimized_revision/`: current Fig. 10 grid, ten-seed repetitions and fidelity/runtime.
+* `results/robustness_screen/`: all exploratory configurations and paired held-out validation.
+* `results/minimal_revision/`: preserved pre-refinement Fig. 10 grid and repetitions.
 * `results/legacy/`: original-protocol rerun (not MATLAB bitwise equivalence).
 * `results/audited/`: raw multi-seed observations, summaries, per-bit vote arrays,
   metric fidelity and negative controls.

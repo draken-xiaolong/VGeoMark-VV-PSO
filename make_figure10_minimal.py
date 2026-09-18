@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Standalone reproduction/style template for IoTJ Figure_12."""
 from pathlib import Path
+import argparse
+from matplotlib.ticker import FormatStrFormatter
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,6 +11,8 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "legacy_results"
 OUTPUT = HERE / "figures"
+RESULTS = HERE / "results/minimal_revision"
+OUTPUT_STEM = "Figure_10_minimal"
 
 DATASET_ORDER = ["Railways", "Building", "Landuse", "Boundary", "Road", "Lake"]
 METHODS = ["yan_2017", "li_2021", "zhang_2025", "lin_2018", "xi_2022", "proposed"]
@@ -48,6 +52,7 @@ def configure_matplotlib():
 
 def format_axes(ax, y_min=.45):
     ax.set_ylim(y_min, 1.04); ax.set_yticks(np.arange(max(0., y_min), 1.01, .1))
+    ax.yaxis.set_major_formatter(FormatStrFormatter("%.2f"))
     ax.grid(axis="y", color="#D8D8D8", linewidth=.45, alpha=.9)
     ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
 
@@ -74,12 +79,12 @@ def apply_latest(deletion, removal, geometry, results):
     ADDITION['Proposed']=[attack_nc(results,f'addition_alpha{alpha:g}_pct{pct}') for alpha in [0,.5,1] for pct in [10,30,50]]
     NOISE['Proposed']=[attack_nc(results,f'noise_strength{strength:g}_pct{pct}') for strength in [.6,1.,1.4] for pct in [10,30,50]]
     CROPPING['Proposed']=[attack_nc(results,'crop_half_x',ds) for ds in DATASET_ORDER]
-    deletion.to_csv(HERE/'results/minimal_revision/figure10_deletion.csv',index=False)
-    removal.to_csv(HERE/'results/minimal_revision/figure10_removal.csv',index=False)
-    geometry.to_csv(HERE/'results/minimal_revision/figure10_geometry.csv',index=False)
-    pd.DataFrame(ADDITION).to_csv(HERE/'results/minimal_revision/figure10_addition.csv',index=False)
-    pd.DataFrame(NOISE).to_csv(HERE/'results/minimal_revision/figure10_noise.csv',index=False)
-    pd.DataFrame(CROPPING).to_csv(HERE/'results/minimal_revision/figure10_cropping.csv',index=False)
+    deletion.to_csv(RESULTS/'figure10_deletion.csv',index=False)
+    removal.to_csv(RESULTS/'figure10_removal.csv',index=False)
+    geometry.to_csv(RESULTS/'figure10_geometry.csv',index=False)
+    pd.DataFrame(ADDITION).to_csv(RESULTS/'figure10_addition.csv',index=False)
+    pd.DataFrame(NOISE).to_csv(RESULTS/'figure10_noise.csv',index=False)
+    pd.DataFrame(CROPPING).to_csv(RESULTS/'figure10_cropping.csv',index=False)
     return deletion,removal,geometry
 
 def plot_curves(ax, df, xcol, xlabel):
@@ -118,9 +123,9 @@ def main():
     deletion=pd.read_csv(DATA/"Figure_13_vertex_deletion_nc.csv")
     removal=pd.read_csv(DATA/"Figure_14_object_removal_nc.csv")
     geometry=pd.read_csv(DATA/"Figure_15_geometric_attacks_nc.csv")
-    results=pd.read_csv(HERE/"results/minimal_revision/raw.csv"); results=results[results.series=="main"]
+    results=pd.read_csv(RESULTS/"raw.csv"); results=results[results.series=="main"]
     deletion,removal,geometry=apply_latest(deletion,removal,geometry,results)
-    compound=compound_data(results); compound.to_csv(HERE/"results/minimal_revision/figure10_compound.csv",index=False)
+    compound=compound_data(results); compound.to_csv(RESULTS/"figure10_compound.csv",index=False)
     fig=plt.figure(figsize=(7.35,9.15),constrained_layout=True)
     fig.get_layout_engine().set(rect=(0,.055,1,.910),h_pad=.040,w_pad=.018,hspace=.055,wspace=.018)
     gs=fig.add_gridspec(5,3); letters=iter("abcdefghijklmn"); del_axes=[]
@@ -131,29 +136,48 @@ def main():
     for i,ds in enumerate(DATASET_ORDER):
         r,c=divmod(i,3); ax=fig.add_subplot(gs[r,c]); plot_curves(ax,deletion[deletion.dataset==ds],"vertex_deletion_percent","Deleted vertices (%)")
         title(ax,f"Vertex deletion-{ds}"); compact(ax,c==0); del_axes.append(ax)
-    ax=fig.add_subplot(gs[2,0]); plot_table(ax,np.arange(9),ADDITION,["10","30","50"]*3,groups=[(r"$\alpha=0$",1),(r"$\alpha=0.5$",4),(r"$\alpha=1$",7)])
+    ax=fig.add_subplot(gs[2,0]); plot_table(ax,np.arange(9),ADDITION,["10","30","50"]*3,groups=[(r"$\alpha=0$",1),(r"$\alpha=0.50$",4),(r"$\alpha=1$",7)])
     title(ax,"Vertex addition"); compact(ax); ax.set_xlabel("Attack intensity (%)"); ax.xaxis.labelpad=7
-    ax=fig.add_subplot(gs[2,1]); plot_table(ax,np.arange(9),NOISE,["10","30","50"]*3,groups=[("0.6 degree",1),("1.0 degree",4),("1.4 degree",7)])
+    ax=fig.add_subplot(gs[2,1]); plot_table(ax,np.arange(9),NOISE,["10","30","50"]*3,groups=[("0.60 degree",1),("1.00 degree",4),("1.40 degree",7)])
     title(ax,"Noise"); compact(ax,False); ax.set_xlabel("Attack intensity (%)"); ax.xaxis.labelpad=7
     ax=fig.add_subplot(gs[2,2]); plot_curves(ax,removal[removal.series=="Average"],"object_removal_percent","Removed objects (%)"); title(ax,"Object removal"); compact(ax,False)
     specs=[("rotation","display_x","Rotation (degree)","Rotation"),("scaling","semantic_x","Scale factor","Scaling"),("translation","display_x","Translation (map unit)","Translation")]
     for c,(family,xcol,xlabel,name) in enumerate(specs):
         ax=fig.add_subplot(gs[3,c]); sub=geometry[geometry.attack_family==family].copy(); sub[xcol]=pd.to_numeric(sub[xcol]); plot_curves(ax,sub,xcol,xlabel); title(ax,name); compact(ax,c==0)
-        if family=="scaling": ax.set_xticks([0,.5,1,1.5,2]); ax.set_xlim(-.08,2.18)
+        if family=="scaling": ax.set_xticks([0,.5,1,1.5,2]); ax.set_xlim(-.08,2.18); ax.xaxis.set_major_formatter(FormatStrFormatter("%.2f"))
         if family=="rotation": ax.set_xticks([0,90,180,270,360])
     crop_ax=fig.add_subplot(gs[4,0]); plot_table(crop_ax,np.arange(6),CROPPING,CROP_LABELS,"Dataset"); title(crop_ax,"Cropping"); compact(crop_ax); crop_ax.tick_params(axis="x",labelrotation=18)
     bar_ax=fig.add_subplot(gs[4,1:3]); x=np.arange(6); width=.8/6
-    for j,m in enumerate(TABLE_METHODS): bar_ax.bar(x+(j-2.5)*width,compound[m],width=width*.92,color=TABLE_COLORS[m],edgecolor="#333333",linewidth=.3,label=TABLE_LABELS[m],zorder=3 if m=="Proposed" else 2)
+    for j,m in enumerate(TABLE_METHODS): bar_ax.bar(x+(j-2.5)*width,compound[m]-.45,bottom=.45,width=width*.92,color=TABLE_COLORS[m],edgecolor="#333333",linewidth=.3,label=TABLE_LABELS[m],zorder=3 if m=="Proposed" else 2)
     bar_ax.set_xticks(x); bar_ax.set_xticklabels(CROP_LABELS); bar_ax.set(xlabel="Dataset",ylabel="NC"); format_axes(bar_ax); title(bar_ax,"Compound attack"); compact(bar_ax,False)
     h,l=del_axes[0].get_legend_handles_labels(); fig.legend(h,l,loc="upper center",ncol=6,frameon=False,bbox_to_anchor=(.5,.992),fontsize=7.8,handlelength=1.55,handletextpad=.3,columnspacing=.85,borderaxespad=0)
     h,l=bar_ax.get_legend_handles_labels(); fig.legend(h,l,loc="lower center",ncol=6,frameon=False,bbox_to_anchor=(.5,.014),fontsize=7.8,handlelength=1.55,handletextpad=.3,columnspacing=.85,borderaxespad=0)
+    # Keep original extra space below grouped addition/noise labels; equalize column gutters.
+    fig.canvas.draw()
+    positions=[ax.get_position().frozen() for ax in fig.axes]
+    middle=(positions[0].x0+positions[2].x0)/2
+    fig.set_layout_engine(None)
+    for i in [1,4,7,10,13]:
+        b=positions[i];right=b.x1 if i==13 else middle+b.width
+        fig.axes[i].set_position([middle,b.y0,right-middle,b.height])
+    # Optional publication QA imports are supplied via PYTHONPATH, not required for reproduction.
+    try:
+        from audit_panel_alignment import require_matplotlib_panel_alignment
+    except ImportError:
+        pass
+    else:
+        require_matplotlib_panel_alignment(fig,json_out=str(OUTPUT/f"{OUTPUT_STEM}.alignment.json"),overlay_svg=str(OUTPUT/f"{OUTPUT_STEM}.alignment.svg"),strict=True,exemptions=[dict(panels=list("abcdefghijklmn"),checks=["vertical-gutter"],reason="Original layout reserves extra space below grouped addition/noise strength labels; plot heights and row/column edges remain aligned.")])
     for ext in ("png","pdf","svg"):
         kw={"dpi":600} if ext in ("png","tiff") else {}
         if ext=="tiff": kw["pil_kwargs"]={"compression":"tiff_lzw"}
-        fig.savefig(OUTPUT/f"Figure_10_minimal.{ext}",**kw)
+        fig.savefig(OUTPUT/f"{OUTPUT_STEM}.{ext}",**kw)
     plt.close(fig); print(f"Generated files in {OUTPUT}")
 
 if __name__ == "__main__":
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--results',type=Path,default=RESULTS)
+    parser.add_argument('--stem',default=OUTPUT_STEM)
+    args=parser.parse_args();RESULTS=args.results.resolve();OUTPUT_STEM=args.stem
     main()
-    for path in OUTPUT.glob("Figure_10_minimal.svg"):
+    for path in OUTPUT.glob(f"{OUTPUT_STEM}.svg"):
         path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines())+"\n")

@@ -1,0 +1,29 @@
+{
+  "profile": "full40",
+  "selected_at": "2026-09-18T22:54:39.453146",
+  "selection_seeds": [
+    11,
+    12,
+    13
+  ],
+  "validation_seeds": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "reason": "Highest six-map mean compound NC on selection seeds among six tested profiles. Retains Q=.03, 10 particles and maximum 40 iterations; removes premature eight-round stagnation stop. Target fitness unchanged. No attack changes.",
+  "screen_mean": 0.89249,
+  "validation_outcome": {
+    "baseline_mean": 0.868447,
+    "selected_mean": 0.88923,
+    "all_six_map_mean_gains_positive": true,
+    "decision": "retain selected profile"
+  }
+}

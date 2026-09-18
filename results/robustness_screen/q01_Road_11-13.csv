@@ -1,0 +1,16 @@
+profile,dataset,attack,seed,noise_mode,nc,accuracy,empty_bins
+q01,Road,no_attack,0,independent,0.9992060340153568,0.9990234375,0
+q01,Road,compound_main,0,independent,0.8290332518403332,0.796875,0
+q01,Road,compound,11,independent,0.829490571078739,0.796875,0
+q01,Road,compound,12,independent,0.8167878182897377,0.77734375,0
+q01,Road,compound,13,independent,0.8457291189377992,0.8125,0
+q01,Road,compound_main,0,correlated,0.8562529055975988,0.8271484375,0
+q01,Road,compound,11,correlated,0.8429876883247333,0.80859375,0
+q01,Road,compound,12,correlated,0.8033112899830651,0.7646484375,0
+q01,Road,compound,13,correlated,0.8429748148201748,0.810546875,0
+q01,Road,vertex_delete_50pct,11,independent,0.8946976941912128,0.8701171875,0
+q01,Road,object_delete_90pct,11,independent,0.8699743523394461,0.837890625,2
+q01,Road,vertex_delete_50pct,12,independent,0.881721018813866,0.853515625,0
+q01,Road,object_delete_90pct,12,independent,0.8760340575115455,0.845703125,2
+q01,Road,vertex_delete_50pct,13,independent,0.8993793830408288,0.876953125,0
+q01,Road,object_delete_90pct,13,independent,0.8618916073713346,0.8291015625,1

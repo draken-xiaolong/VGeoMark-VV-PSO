@@ -1,0 +1,16 @@
+profile,dataset,attack,seed,noise_mode,nc,accuracy,empty_bins
+full40,Railways,no_attack,0,independent,1.0,1.0,0
+full40,Railways,compound_main,0,independent,0.9423979663016241,0.9287109375,0
+full40,Railways,compound,11,independent,0.9469543736749473,0.9345703125,0
+full40,Railways,compound,12,independent,0.9443573142797523,0.931640625,0
+full40,Railways,compound,13,independent,0.9414337930972054,0.9287109375,0
+full40,Railways,compound_main,0,correlated,0.9423512561500821,0.9296875,0
+full40,Railways,compound,11,correlated,0.9360837420717975,0.9208984375,0
+full40,Railways,compound,12,correlated,0.9524576144552234,0.94140625,0
+full40,Railways,compound,13,correlated,0.9370592297181646,0.9228515625,0
+full40,Railways,vertex_delete_50pct,11,independent,0.9944903161976938,0.9931640625,0
+full40,Railways,object_delete_90pct,11,independent,0.9517860909388396,0.9404296875,13
+full40,Railways,vertex_delete_50pct,12,independent,0.9944289260117531,0.9931640625,0
+full40,Railways,object_delete_90pct,12,independent,0.9584160408527164,0.9482421875,4
+full40,Railways,vertex_delete_50pct,13,independent,0.994474171429452,0.9931640625,0
+full40,Railways,object_delete_90pct,13,independent,0.9678430838774972,0.9599609375,6

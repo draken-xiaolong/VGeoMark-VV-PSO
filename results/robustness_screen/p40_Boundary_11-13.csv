@@ -1,0 +1,16 @@
+profile,dataset,attack,seed,noise_mode,nc,accuracy,empty_bins
+p40,Boundary,no_attack,0,independent,1.0,1.0,0
+p40,Boundary,compound_main,0,independent,0.8351408967715074,0.8037109375,0
+p40,Boundary,compound,11,independent,0.8529116144200859,0.822265625,0
+p40,Boundary,compound,12,independent,0.8457403840156187,0.8134765625,0
+p40,Boundary,compound,13,independent,0.8546250483626224,0.8251953125,0
+p40,Boundary,compound_main,0,correlated,0.8427501480599423,0.810546875,0
+p40,Boundary,compound,11,correlated,0.8498576052890247,0.81640625,0
+p40,Boundary,compound,12,correlated,0.8483264190952196,0.8173828125,0
+p40,Boundary,compound,13,correlated,0.8478381310595219,0.81640625,0
+p40,Boundary,vertex_delete_50pct,11,independent,0.915480973644681,0.896484375,0
+p40,Boundary,object_delete_90pct,11,independent,0.8815264878533497,0.853515625,0
+p40,Boundary,vertex_delete_50pct,12,independent,0.8990800250003335,0.876953125,0
+p40,Boundary,object_delete_90pct,12,independent,0.8710890852199991,0.8388671875,0
+p40,Boundary,vertex_delete_50pct,13,independent,0.892051523093975,0.869140625,0
+p40,Boundary,object_delete_90pct,13,independent,0.8903521299618115,0.86328125,0

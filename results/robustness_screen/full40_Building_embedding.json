@@ -1,0 +1,30 @@
+{
+  "dataset": "Building",
+  "profile": "full40",
+  "config": {
+    "q": 0.03,
+    "mcof": 1000000.0,
+    "num_particles": 10,
+    "max_iter": 40,
+    "inertia": 0.6,
+    "inertia_min": 0.0,
+    "c1_initial": 1.8,
+    "c1_min": 1.6,
+    "c2_initial": 1.8,
+    "c2_max": 2.2,
+    "early_stop_rounds": 40,
+    "early_stop_tol": 1e-12,
+    "target_fitness": 0.995,
+    "pca_normalize": true,
+    "n_jobs": 1,
+    "random_seed": 20260615,
+    "verbose": false,
+    "preserve_parts": false
+  },
+  "embed_seconds": 6.243025542004034,
+  "fitness": 0.9824342561730709,
+  "iterations": 10.327799530148786,
+  "max_displacement_m": 6.893991210448156e-06,
+  "mean_displacement_m": 3.034806805737329e-08,
+  "mean_displacement_degrees": 3.178459445279847e-13
+}

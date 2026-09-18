@@ -4,7 +4,13 @@ The source of truth is the Python code plus per-observation CSV/NPZ files. No
 new result is manually transcribed from a plot. The original manuscript and
 historical baseline values are NOT proof of independently reproduced baselines.
 
-## Two explicit protocols
+## Current manuscript refinement
+
+The current main grid is `results/optimized_revision/`. See
+[ROBUSTNESS_REVISION.md](ROBUSTNESS_REVISION.md) for the single stopping-rule
+change and paired validation. The following historical protocols remain intact.
+
+## Two historical protocols
 
 `run_revision.py --mode legacy` retains the original Python carrier traversal,
 PSO seed (20260615 + feature_index*1009), original attack seeds and original

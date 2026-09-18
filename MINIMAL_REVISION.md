@@ -1,3 +1,5 @@
+> Historical pre-refinement protocol. For the current manuscript see [ROBUSTNESS_REVISION.md](ROBUSTNESS_REVISION.md).
+
 # Original-layout revision evidence
 
 The manuscript retains its original figure order and all non-experimental artwork.

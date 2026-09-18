@@ -1,0 +1,44 @@
+{
+  "profiles": {
+    "baseline": {},
+    "p20": {
+      "num_particles": 20
+    },
+    "p40": {
+      "num_particles": 40
+    },
+    "long": {
+      "num_particles": 20,
+      "max_iter": 80,
+      "early_stop_rounds": 16
+    },
+    "full40": {
+      "early_stop_rounds": 40
+    },
+    "q01": {
+      "q": 0.1
+    }
+  },
+  "selection_seeds": [
+    11,
+    12,
+    13
+  ],
+  "reserved_validation_seeds": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "selection_rule": "Maximize mean compound NC under unchanged independent-coordinate noise; retain baseline if gains are inconsistent or single-attack controls regress materially.",
+  "attack_changes": "None for parameter comparison; correlated noise is a separate diagnostic.",
+  "python": "3.11.5",
+  "numpy": "2.4.6",
+  "source_sha256": "2fed02ce72cef113f0d31a128a54dbf60227ccc6044143a96de3395e222701d1"
+}

@@ -1,0 +1,30 @@
+{
+  "dataset": "Railways",
+  "profile": "p40",
+  "config": {
+    "q": 0.03,
+    "mcof": 1000000.0,
+    "num_particles": 40,
+    "max_iter": 40,
+    "inertia": 0.6,
+    "inertia_min": 0.0,
+    "c1_initial": 1.8,
+    "c1_min": 1.6,
+    "c2_initial": 1.8,
+    "c2_max": 2.2,
+    "early_stop_rounds": 8,
+    "early_stop_tol": 1e-12,
+    "target_fitness": 0.995,
+    "pca_normalize": true,
+    "n_jobs": 1,
+    "random_seed": 20260615,
+    "verbose": false,
+    "preserve_parts": false
+  },
+  "embed_seconds": 5.916412584017962,
+  "fitness": 0.9721437341194296,
+  "iterations": 4.304927948763565,
+  "max_displacement_m": 0.00027229469214371237,
+  "mean_displacement_m": 3.1586945698256327e-07,
+  "mean_displacement_degrees": 3.1969373203126853e-12
+}

@@ -1,0 +1,16 @@
+profile,dataset,attack,seed,noise_mode,nc,accuracy,empty_bins
+baseline,Lake,no_attack,0,independent,1.0,1.0,0
+baseline,Lake,compound_main,0,independent,0.8491213024464579,0.8193359375,0
+baseline,Lake,compound,11,independent,0.8593853268635021,0.830078125,0
+baseline,Lake,compound,12,independent,0.8535158879465892,0.8212890625,0
+baseline,Lake,compound,13,independent,0.8615226035933677,0.8310546875,0
+baseline,Lake,compound_main,0,correlated,0.8793194040728801,0.853515625,0
+baseline,Lake,compound,11,correlated,0.8583199173346563,0.8271484375,0
+baseline,Lake,compound,12,correlated,0.8569168222168123,0.82421875,0
+baseline,Lake,compound,13,correlated,0.8630154879842253,0.833984375,0
+baseline,Lake,vertex_delete_50pct,11,independent,0.9116509704139395,0.892578125,0
+baseline,Lake,object_delete_90pct,11,independent,0.8819877672918267,0.85546875,6
+baseline,Lake,vertex_delete_50pct,12,independent,0.915385729888094,0.8974609375,0
+baseline,Lake,object_delete_90pct,12,independent,0.8943395664891985,0.869140625,1
+baseline,Lake,vertex_delete_50pct,13,independent,0.9140034262160762,0.8955078125,0
+baseline,Lake,object_delete_90pct,13,independent,0.8811421524743831,0.853515625,0
