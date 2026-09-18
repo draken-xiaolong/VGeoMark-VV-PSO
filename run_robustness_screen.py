@@ -66,3 +66,17 @@ if __name__=='__main__':
     (dest/'screen_plan.json').write_text(json.dumps(dict(profiles=PROFILES,selection_seeds=[11,12,13],reserved_validation_seeds=list(range(21,31)),selection_rule='Maximize mean compound NC under unchanged independent-coordinate noise; retain baseline if gains are inconsistent or single-attack controls regress materially.',attack_changes='None for parameter comparison; correlated noise is a separate diagnostic.',python=platform.python_version(),numpy=np.__version__,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()),indent=2))
     with ProcessPoolExecutor(max_workers=a.workers) as pool:
         for r in pool.map(run,[(p,n,a.seeds) for p in a.profiles for n in a.datasets]):print(r,flush=True)
+    # Refresh aggregate evidence from the per-map observations, including reruns.
+    if a.seeds==[11,12,13]:
+        frames=[pd.read_csv(p) for p in sorted(dest.glob('*_11-13.csv'))]
+        combined=pd.concat(frames,ignore_index=True)
+        combined.to_csv(dest/'screen_raw.csv',index=False)
+        combined.groupby(['profile','attack','noise_mode']).nc.agg(['count','mean','std']).to_csv(dest/'screen_summary.csv')
+    elif a.seeds==list(range(21,31)):
+        paths=[dest/f'{profile}_{name}_21-30.csv' for profile in ['baseline','full40'] for name in NAMES]
+        if all(p.exists() for p in paths):
+            combined=pd.concat([pd.read_csv(p) for p in paths],ignore_index=True)
+            combined.to_csv(dest/'validation_raw.csv',index=False)
+            paired=combined[(combined.noise_mode=='independent')&(combined.attack=='compound')].pivot(index=['dataset','seed'],columns='profile',values='nc')
+            paired['gain']=paired.full40-paired.baseline
+            paired.to_csv(dest/'validation_paired.csv')
