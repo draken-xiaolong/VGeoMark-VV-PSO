@@ -31,6 +31,7 @@ python validate_results.py
 * `results/diagnostics/`: paired internal ablation, redundancy, PCA conditioning,
   and compound-geometry/coordinate-rounding failure modes.
 * `figures/`: numerical plots and archived optional diagrams; main manuscript diagrams retain their original artwork.
+* `comparisons/`: external-method provenance inventory and missing implementation/tuning evidence.
 * `legacy_results/`: historical screenshot-derived tables with provenance caveats.
 
 `run_experiments.py` and `run_single.py` remain compatibility entry points; use

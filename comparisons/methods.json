@@ -1,0 +1,144 @@
+{
+  "audit_date": "2026-09-19",
+  "scope": "Existing manuscript labels and available local/repository records; not a literature or upstream-code search.",
+  "methods": [
+    {
+      "method_id": "yan_2017",
+      "display_label": "Yan et al. (2017)",
+      "manuscript_citation_key": "H.Yan17",
+      "historical_column": "E4",
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "legacy_results/",
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "method_id": "li_2021",
+      "display_label": "Li et al. (2021)",
+      "manuscript_citation_key": "Y.Li21",
+      "historical_column": "E2_30",
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "legacy_results/",
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "method_id": "zhang_2025",
+      "display_label": "Zhang et al. (2025)",
+      "manuscript_citation_key": "J.Zhang25",
+      "historical_column": "E5_35",
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "legacy_results/",
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "method_id": "lin_2018",
+      "display_label": "Lin et al. (2018)",
+      "manuscript_citation_key": "Z.Lin18",
+      "historical_column": "E3_36",
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "legacy_results/",
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "method_id": "xi_2022",
+      "display_label": "Xi et al. (2022)",
+      "manuscript_citation_key": "X.Xi22",
+      "historical_column": "E1_37",
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "legacy_results/",
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "method_id": "tan_2024",
+      "display_label": "Tan et al. (2024)",
+      "manuscript_citation_key": "Tan24",
+      "historical_column": null,
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "method_id": "wu_2025",
+      "display_label": "Wu et al. (2025)",
+      "manuscript_citation_key": "M.Wu25",
+      "historical_column": null,
+      "implementation_status": "not_in_current_repository",
+      "implementation_origin": null,
+      "source_url": null,
+      "source_commit": null,
+      "license": null,
+      "parameter_selection_record": null,
+      "selected_parameters": null,
+      "shared_attack_realizations_verified": false,
+      "matched_fidelity_verified": false,
+      "historical_result_sources": [
+        "make_figure10_minimal.py"
+      ],
+      "independently_reproduced": false
+    }
+  ]
+}
