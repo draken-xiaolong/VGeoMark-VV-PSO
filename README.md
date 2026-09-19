@@ -1,6 +1,6 @@
 # VGeoMark: virtual-vertex PSO-QIM revision artifact
 
-Python-only reproduction and audit for the IEEE IoT Journal major revision.
+Python-only reproduction.
 The current manuscript preserves the original figure layout. Start with
 [ROBUSTNESS_REVISION.md](ROBUSTNESS_REVISION.md) for the selected stopping rule,
 current Figure 10 results, and independent validation.
